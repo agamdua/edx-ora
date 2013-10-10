@@ -3,9 +3,10 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
 from controller import util
-from metrics.charting import render_image
 import metrics_util
-from django.template.loader import render_to_string
+from tasks import get_course_data_filename
+from django.conf import settings
+from boto.s3.connection import S3Connection
 
 from controller.models import Submission
 
